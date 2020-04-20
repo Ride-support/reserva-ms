@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    image: "reserva"
+    build: .
+    command: "node src/app.js"
+    ports:
+      - "4001:4001"
+    depends_on:
+      - "mongo"
+  mongo:
+    image: "mongo"
+    ports:
+      - "27017:27017"
